@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tempat Hiburan Online yang Praktis, Cepat, dan Terpercaya</title>
+    <style>
+        /* --- RESET & GLOBAL STYLES --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth; /* Efek scroll halus saat menu diklik */
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- NAVBAR / HEADER --- */
+        header {
+            background-color: #0f172a;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #38bdf8;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #ffffff;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #38bdf8;
+        }
+
+        /* Tombol Daftar di Navbar */
+        .btn-nav {
+            background-color: #0284c7;
+            color: #ffffff !important;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.2s;
+        }
+
+        .btn-nav:hover {
+            background-color: #0369a1;
+            transform: translateY(-2px);
+        }
+
+        /* --- HERO SECTION (DAFTAR SEKARANG) --- */
+        .hero {
+            padding: 180px 0 100px 0;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: #cbd5e1;
+            max-width: 600px;
+            margin: 0 auto 35px auto;
+        }
+
+        .btn-main {
+            display: inline-block;
+            background-color: #0284c7;
+            color: #ffffff;
+            padding: 14px 35px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 18px;
+            box-shadow: 0 10px 15px -3px rgba(2, 132, 199, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-main:hover {
+            background-color: #0369a1;
+            transform: translateY(-3px);
+            box-shadow: 0 20px 25px -5px rgba(2, 132, 199, 0.4);
+        }
+
+        /* --- SECTION SYSTEM --- */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #0f172a;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: #0284c7;
+            border-radius: 2px;
+        }
+
+        /* --- PROMO SECTION --- */
+        #promo {
+            background-color: #ffffff;
+        }
+
+        .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .promo-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 35px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .promo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+            border-color: #bae6fd;
+        }
+
+        .promo-badge {
+            display: inline-block;
+            background: #dcfce7;
+            color: #15803d;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .promo-card h3 {
+            font-size: 22px;
+            color: #0f172a;
+            margin-bottom: 15px;
+        }
+
+        .promo-card p {
+            color: #64748b;
+            font-size: 16px;
+        }
+
+        /* --- HUBUNGI KAMI SECTION --- */
+        #kontak {
+            background-color: #f1f5f9;
+        }
+
+        .contact-box {
+            background: #ffffff;
+            max-width: 700px;
+            margin: 0 auto;
+            border-radius: 16px;
+            padding: 50px 40px;
+            text-align: center;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        .contact-box p {
+            font-size: 18px;
+            color: #475569;
+            margin-bottom: 35px;
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            background-color: #22c55e;
+            color: #ffffff;
+            padding: 16px 40px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 18px;
+            box-shadow: 0 10px 15px -3px rgba(34, 197, 94, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #16a34a;
+            transform: translateY(-3px);
+            box-shadow: 0 20px 25px -5px rgba(34, 197, 94, 0.4);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #0f172a;
+            color: #64748b;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 14px;
+            border-top: 1px solid #1e293b;
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 768px) {
+            .nav-menu {
+                gap: 15px;
+            }
+            .nav-menu a {
+                font-size: 14px;
+            }
+            .btn-nav {
+                padding: 8px 14px;
+            }
+            .hero-content h1 {
+                font-size: 32px;
+            }
+            .hero-content p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">WARAS<span>4D</span></a>
+            
+            <ul class="nav-menu">
+                <li><a href="#promo">Menu Promo</a></li>
+                <li><a href="#kontak">Hubungi Kami</a></li>
+                <li><a href="#daftar" class="btn-nav">Daftar Sekarang</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero" id="daftar">
+        <div class="container hero-content">
+            <h1>Nikmati pengalaman bermain yang nyaman dengan sistem modern, proses transaksi cepat.</h1>
+            <p>Tersedia berbagai kategori permainan dari provider populer dengan tampilan yang menarik dan mudah dimainkan.</p>
+            <a href="#kontak" class="btn-main">💬 Customer Service 24 Jam</a>
+        </div>
+    </section>
+
+    <section class="section" id="promo">
+        <div class="container">
+            <div class="section-title">
+                <h2>Promo Menarik</h2>
+            </div>
+            
+            <div class="promo-grid">
+                <div class="promo-card">
+                    <span class="promo-badge">Bonus Harian</span>
+                    <h3>Bonus Deposit</h3>
+                    <p>Tersedia Bonus Deposit khusus Slot 10% maksimal bonus hingga 200rb Setiap Hari!</p>
+                </div>
+                <div class="promo-card">
+                    <span class="promo-badge">Bonus Mingguan</span>
+                    <h3>Bonus Rollingan & Cashback Setiap Hari RABU</h3>
+                    <p>Bonus akan di dapatkan secara otomatis setiap Hari Rabu apabila mencapai Ketentuan dari syarat & ketentuan bonus mingguan!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="kontak">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hubungi Kami Sekarang</h2>
+            </div>
+            
+            <div class="contact-box">
+                <p>Kami siap membantu via chat WhatsApp secara instan.</p>
+                <a href="https://wa.me/6281234567890?text=Halo%20Nexapoint,%20saya%20tertarik%20konsultasi%20landing%20page" class="btn-whatsapp" target="_blank">
+                    Tim layanan pelanggan siap membantu Anda selama 24 jam setiap hari.
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; © 2015 - 2026 Copyright WARAS4D.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
