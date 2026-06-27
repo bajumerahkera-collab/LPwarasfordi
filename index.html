@@ -285,6 +285,52 @@
                 font-size: 16px;
             }
         }
+        /* --- Tampilan Desktop / Standar --- */
+.hero-content h1 {
+    font-size: 48px; /* Teks besar di laptop */
+}
+.hero-content p {
+    font-size: 18px;
+}
+@media (max-width: 768px) {
+    .hero-mobile-friendly {
+        padding: 60px 15px; 
+    }
+
+    .hero-content h1 {
+        font-size: 28px; 
+        line-height: 1.3;
+    }
+
+    .hero-content p {
+        font-size: 15px; 
+    }
+    
+    .btn-main {
+        width: 100%;
+        display: block;
+        box-sizing: border-box;
+    }
+}
+        .hero-mobile-friendly {
+    /* 1. Menggunakan gambar */
+    background-image: url('https://i.ibb.co/PshwdcG7/pngtree-amoi-slot-casino-image-16486841.jpg'); 
+    
+    /* 2. Memastikan seluruh gambar masuk ke area layar tanpa merusak proporsi */
+    background-size: cover; 
+    
+    /* 3. Menjaga fokus utama gambar tetap berada di tengah layar */
+    background-position: center center; 
+    
+    /* 4. Agar gambar tidak terulang (no-loop) jika konten memanjang */
+    background-repeat: no-repeat; 
+    
+    /* 5. Menggunakan padding berbasis persentase (atau rem/em) agar fleksibel */
+    padding: 80px 20px; 
+    
+    /* 6. Memastikan tinggi minimal section cukup untuk menampung teks */
+    min-height: auto; 
+}
     </style>
 </head>
 <body>
